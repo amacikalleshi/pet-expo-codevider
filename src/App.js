@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Routes, Link, useSearchParams, useLocation } from 'react-router-dom';
 import './App.css';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const App = () => {
   const location = useLocation();
@@ -153,18 +155,51 @@ const App = () => {
                 workshops, and exhibitions to educate and entertain our visitors. Join us to explore the amazing world
                 of pets and meet fellow enthusiasts.
               </p>
-              <img src="https://via.placeholder.com/800x400.png?text=Pet+Expo+Event" alt="Pet Expo Event" />
+              <img src="https://www.bitevisual.com.au/wp-content/uploads/2020/03/23212-Kingston-Pet-Expo-1.jpg" alt="Pet Expo Event" />
               <p>
                 Our mission is to promote responsible pet ownership, support animal welfare, and provide a platform for
                 pet enthusiasts to connect and share their experiences. We believe that pets bring joy and companionship
                 to our lives, and we are committed to celebrating this special bond.
               </p>
-              <img src="https://via.placeholder.com/800x400.png?text=Pet+Lovers" alt="Pet Lovers" />
+              <img src="https://www.petfairasia.com/en/wp-content/uploads/2019/04/chengdu0.jpg" alt="Pet Lovers" />
               <p>
                 Join us at our next event and become part of the Pet Expo community. Whether you are a seasoned pet
                 owner or looking to learn more about pets, we have something for everyone. From educational seminars to
                 fun activities, Pet Expo is the perfect place to discover, learn, and enjoy.
               </p>
+              <h2>Upcoming Events</h2>
+          <Carousel showThumbs={false} showStatus={false} infiniteLoop autoPlay>
+            <div className="event-card">
+              <h3>Pet Adoption Fair</h3>
+              <p>Date: July 10, 2024</p>
+              <p>Location: Central Park</p>
+              <p>Description: Join us for a day of fun and meet your new best friend at our pet adoption fair.</p>
+            </div>
+            <div className="event-card">
+              <h3>Pet Health Workshop</h3>
+              <p>Date: August 15, 2024</p>
+              <p>Location: City Hall</p>
+              <p>Description: Learn from experts about how to keep your pets healthy and happy.</p>
+            </div>
+            <div className="event-card">
+              <h3>Animal Rescue Fundraiser</h3>
+              <p>Date: September 20, 2024</p>
+              <p>Location: Riverside Arena</p>
+              <p>Description: Help us raise funds for local animal shelters and rescues. Enjoy games, food, and more.</p>
+            </div>
+            <div className="event-card">
+              <h3>Pet Training Seminar</h3>
+              <p>Date: October 5, 2024</p>
+              <p>Location: Community Center</p>
+              <p>Description: Discover effective training techniques to improve your pet's behavior.</p>
+            </div>
+            <div className="event-card">
+              <h3>Veterinary Q&A Session</h3>
+              <p>Date: November 12, 2024</p>
+              <p>Location: Online Webinar</p>
+              <p>Description: Get answers to your pet health questions from a professional vet.</p>
+            </div>
+          </Carousel>
             </section>
           }
         />
