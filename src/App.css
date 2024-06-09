@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background-color: #3a3a3a; 
+  background-color: #3a3a3a;
   color: white;
   padding: 20px;
   text-align: center;
@@ -31,25 +31,36 @@ header nav {
   gap: 20px;
 }
 
-header button, .dropbtn {
+.nav-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: white
+}
+
+header button,
+.selected {
+  text-decoration: none;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
   background-color: white;
-  border: 2px solid #3a3a3a; 
-  color: #3a3a3a; 
+  border: 2px solid #3a3a3a;
+  color: #3a3a3a;
   border-radius: 25px;
   transition: all 0.3s;
 }
 
-header button:hover, .dropbtn:hover {
-  background-color: #3a3a3a; 
+header button:hover,
+.selected:hover {
+  background-color: #3a3a3a;
   color: white;
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
+  align-self: center;
 }
 
 .dropdown-content {
@@ -57,12 +68,12 @@ header button:hover, .dropbtn:hover {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 8px;
 }
 
-.dropdown-content button {
+.dropdown-content .catalog-types {
   padding: 12px 16px;
   text-align: left;
   background: none;
@@ -70,20 +81,28 @@ header button:hover, .dropbtn:hover {
   width: 100%;
   cursor: pointer;
   transition: background-color 0.3s;
+  text-decoration: none;
 }
 
-.dropdown-content button:hover {
+.dropdown-content .catalog-types:hover {
   background-color: #ddd;
+  width: 130px;
+}
+
+.catalog-types {
+  text-decoration: none;
+  color: black;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
   display: block;
   color: black;
-  text-shadow:2px 2px 10px #FF0000;
+  text-shadow: 2px 2px 10px #626060;
   font-size: 40px;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
@@ -99,7 +118,8 @@ section {
   text-align: center;
 }
 
-.contact text, .contact textarea {
+.contact text,
+.contact textarea {
   padding: 10px;
   font-size: 16px;
   border-radius: 8px;
@@ -107,7 +127,20 @@ section {
   resize: none;
 }
 
-input[type="text"] {
+.search-bar {
+  width: 80%;
+  padding: 15px;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  font-size: 16px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  position: fixed;
+  top: 100px;
+  left: 10%;
+  z-index: 999;
   width: 80%;
   padding: 15px;
   margin-bottom: 20px;
@@ -125,7 +158,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
   outline: none;
-  border-color: #3a3a3a; 
+  border-color: #3a3a3a;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -176,11 +209,11 @@ input[type="text"]:focus {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   animation: fadeIn 0.3s ease-out;
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* Creative background */
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
 }
 
 .animal-popup img {
-  width: 50%; 
+  width: 50%;
   height: auto;
   margin-bottom: 20px;
   border-radius: 15px;
@@ -189,7 +222,7 @@ input[type="text"]:focus {
 
 .animal-popup h2 {
   margin-top: 0;
-  color: #1b0844; 
+  color: #1b0844;
 }
 
 .animal-popup p {
@@ -206,7 +239,7 @@ input[type="text"]:focus {
 .animal-popup button {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #494443; 
+  background-color: #494443;
   color: white;
   border: none;
   border-radius: 25px;
@@ -223,6 +256,7 @@ input[type="text"]:focus {
     opacity: 0;
     transform: translate(-50%, -60%);
   }
+
   to {
     opacity: 1;
     transform: translate(-50%, -50%);
@@ -234,7 +268,7 @@ input[type="text"]:focus {
   background-size: cover;
   background-position: center;
   color: white;
-  text-shadow:2px 2px 8px #FF0000;
+  text-shadow: 2px 2px 8px #FF0000;
   padding: 90px;
   text-align: center;
   font-size: 2.5em;
@@ -242,29 +276,42 @@ input[type="text"]:focus {
   margin-top: 150px;
 }
 
-.about, .contact {
+.about,
+.contact {
   padding: 50px 20px;
   text-align: left;
   max-width: 800px;
   margin: auto;
-  background: white; 
+  background: white;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(20px);
+  animation: fadeInContent 0.8s ease forwards;
 }
 
-.about h2, .contact h2 {
+.about h2,
+.contact h2 {
   color: #3a3a3a;
   font-size: 2em;
   margin-bottom: 20px;
   border-bottom: 2px solid #3a3a3a;
   padding-bottom: 10px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInLeft 0.8s ease forwards;
+  animation-delay: 0.2s;
 }
 
-.about p, .contact p {
+.about p,
+.contact p {
   font-size: 1.1em;
   line-height: 1.8;
   margin-bottom: 20px;
   margin-top: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.4s;
 }
 
 .about img {
@@ -272,6 +319,10 @@ input[type="text"]:focus {
   height: auto;
   border-radius: 15px;
   margin-bottom: 20px;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInZoom 0.8s ease forwards;
+  animation-delay: 0.6s;
 }
 
 .contact form {
@@ -290,7 +341,7 @@ input[type="text"]:focus {
   color: white;
   border: none;
   border-radius: 25px;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .contact button:hover {
@@ -303,6 +354,54 @@ input[type="text"]:focus {
   border: none;
   border-radius: 15px;
   margin-top: 20px;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInZoom 0.8s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 footer {
